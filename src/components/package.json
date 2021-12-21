@@ -1,0 +1,27 @@
+{
+  "name": "tippop",
+  "version": "0.0.1",
+  "description": "A react tooltip component based on popperJS!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icyi2i/tippop.git"
+  },
+  "keywords": [
+    "tippop",
+    "tooltip",
+    "popper"
+  ],
+  "author": "sarthak3gambhir@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icyi2i/tippop/issues"
+  },
+  "homepage": "https://github.com/icyi2i/tippop#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
