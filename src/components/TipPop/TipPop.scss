@@ -1,0 +1,12 @@
+.tippop-container {
+  position: relative;
+
+  .tippop {
+    display: block;
+    padding: 8px;
+    margin: 0px;
+    border: 1px solid black;
+    width: max-content;
+    position: absolute;
+  }
+}
