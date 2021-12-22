@@ -1,7 +1,7 @@
 {
   "name": "tippop",
   "version": "0.0.1",
-  "description": "A react tooltip component based on popperJS!",
+  "description": "A minimal react tooltip component!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
   "keywords": [
     "tippop",
     "tooltip",
-    "popper"
+    "react"
   ],
   "author": "sarthak3gambhir@gmail.com",
   "license": "MIT",

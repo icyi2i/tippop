@@ -1,4 +1,7 @@
 {
+  "trailingComma": "es5",
+  "semi": true,
+  "proseWrap": "always",
   "tabWidth": 2,
   "useTabs": false
 }
