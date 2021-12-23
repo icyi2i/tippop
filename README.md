@@ -2,6 +2,10 @@
 
 A minimal react tooltip component!
 
+## Demo
+
+[TipPop demo](https://icyi2i.github.io/tippop/)
+
 ## Setup for development
 
 1. Clone the repository
