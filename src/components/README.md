@@ -4,6 +4,8 @@ A minimal react tooltip component!
 
 ## Demo
 
+[TipPop demo](https://icyi2i.github.io/tippop/)
+
 ## Installation
 
 - Using npm
