@@ -2,16 +2,27 @@ html,
 body,
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+#tippop-app {
+  min-height: 100vh;
 }
 
 p {
   margin: 0;
 }
 
-.square-block {
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  border-radius: 8px;
-  border: 1px solid #222222;
+.link-icon {
+  &.npm {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  &.gh {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
 }

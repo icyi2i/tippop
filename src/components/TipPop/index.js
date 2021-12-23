@@ -8,6 +8,7 @@ import "./TipPop.scss";
  * @param bool disablePointer - flag to disable arrow towards the target
  * @param string behavior - toggle behavior (onHover/onClick/custom)
  * @param string position - tooltip position (auto/top/bottom/left/right)
+ * @param string className - custom classes for trigger container
  */
 const TipPop = (props) => {
   const {
@@ -16,11 +17,15 @@ const TipPop = (props) => {
     behavior = "onHover",
     position = "auto",
     disablePointer = false,
+    className = "",
   } = props;
 
-  const [showTip, setShowTip] = useState(false);
+  const [showTip, setShowTip] = useState(show);
 
-  const toggleShowTip = () => setShowTip(!showTip);
+  const toggleShowTip = (e) => {
+    e.stopPropagation();
+    setShowTip(!showTip);
+  };
 
   const tipPopContainerEventProps = {
     onMouseEnter: behavior === "onHover" ? toggleShowTip : undefined,
@@ -29,7 +34,10 @@ const TipPop = (props) => {
   };
 
   return (
-    <div className="tippop-container" {...tipPopContainerEventProps}>
+    <div
+      className={`tippop-container ${className.toString()}`}
+      {...tipPopContainerEventProps}
+    >
       {props.children}
       {(behavior === "custom" ? show : showTip) && (
         <div

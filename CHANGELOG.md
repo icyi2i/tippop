@@ -26,3 +26,6 @@ History of the project TipPop.
 - [Style] - Add basic style for tooltips in TipPop container.
 - [Docfix] - Add jsdoc and proptypes to TipPop for ease of usability
 - [Docfix] - Add examples and styling to App component.
+- [Docfix] - Add examples for demo for behavior and styiling customizations
+- [Docfix] - Add documentation for TipPop component package in readme.
+- [Style] - Add tooltip trigger container custom styling.

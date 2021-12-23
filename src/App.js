@@ -1,57 +1,51 @@
-import React, { useState } from "react";
-import TipPop from "./components/TipPop";
+import React from "react";
+
+import InbuiltBehavior from "./examples/InbuiltBehavior";
+import CustomContent from "./examples/CustomContent";
+import CustomClasses from "./examples/CustomClasses";
+import CustomBehavior from "./examples/CustomBehavior";
+
+import gh from "./resources/gh.png";
+import npm from "./resources/npm.png";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
 const App = () => {
-  const [show, setShow] = useState(false);
+  const examples = [
+    InbuiltBehavior,
+    CustomContent,
+    CustomClasses,
+    CustomBehavior,
+  ];
+
   return (
-    <div className="jumbotron">
-      <h1>TipPop</h1>
+    <div id="tippop-app" className="bg-light p-5">
+      <h1 className="display-4">TipPop</h1>
+      <p className="lead">A minimal react tooltip component</p>
 
-      <div className="my-5">
-        <p className="mb-3">
-          A tooltip can be mapped to components with custom handler for toggling
-          tooltips!
-        </p>
-        <TipPop tip="A tip to be shown" show={show} behavior="custom">
-          <button
-            className="btn btn-outline-dark"
-            onClick={(e) => {
-              e.stopPropagation();
-              setShow(!show);
-            }}
-          >
-            Toggle Tip
-          </button>
-        </TipPop>
-      </div>
+      {examples.map((Example, index) => (
+        <div className="p-3 my-3 border border-dark" key={index}>
+          <Example />
+        </div>
+      ))}
 
-      <div className="my-5">
+      <div className="border-top border-dark p-2">
+        <h5>Author</h5>
         <p className="mb-3">
-          Inbuilt behaviors allow basic toggling of tooltips on hover and click.
+          <a className="text-dark" href="http://sarthakgambhir.herokuapp.com/">
+            <strong>icyi2i (Sarthak Gambhir)</strong>
+          </a>
         </p>
 
-        <TipPop
-          tip={
-            <p>
-              The tooltip content can be anything renderable, even{" "}
-              <em>custom</em> <strong>JSX</strong>
-            </p>
-          }
-          behavior="onHover"
-          position="left"
-        >
-          <div className="bg-light square-block">
-            <span>
-              Hover
-              <br />
-              over
-              <br />
-              me!
-            </span>
-          </div>
-        </TipPop>
+        <h5>Links</h5>
+
+        <a className="text-dark" href="https://github.com/icyi2i/tippop">
+          <img className="link-icon gh" src={gh} alt="github" />
+        </a>
+        <a className="text-dark" href="https://www.npmjs.com/package/tippop">
+          <img className="link-icon npm" src={npm} alt="npmjs" />
+        </a>
       </div>
     </div>
   );
