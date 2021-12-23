@@ -2,9 +2,10 @@
 
 A minimal react tooltip component!
 
-## Demo
+## Demo and documentation
 
-[TipPop demo](https://icyi2i.github.io/tippop/)
+- [TipPop demo](https://icyi2i.github.io/tippop/)
+- [Documentation](https://github.com/icyi2i/tippop/tree/master/src/components)
 
 ## Setup for development
 
@@ -45,3 +46,9 @@ Changelog should be appropriately updated. Follow the syntax for new versions.
 ```
 
 For ease of operations, add git commit messages, and change it later. :)
+
+## Links
+
+- [Author: Sarthak Gambhir](http://sarthakgambhir.herokuapp.com/)
+- [Github repo](https://github.com/icyi2i/tippop)
+- [NPM package](https://www.npmjs.com/package/tippop)
