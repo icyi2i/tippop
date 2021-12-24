@@ -54,6 +54,13 @@ Customization is possible in the following areas:
 - Behavior: Along with inbuilt behaviors of `onClick` and `onHover`, a `show`
   flag can be used along with `custom` behavior to override with toggle state
   maintained by you
+- Position: The `position` prop allows you to decide the position of the tooltip
+  with respect to the container. Supported positions are:
+  - left
+  - right
+  - top
+  - bottom
+  - auto - switches between bottom and top based on space available
 - Styling: Custom classes allow you to customize how trigger container looks
   like.
 
