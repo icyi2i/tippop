@@ -8,8 +8,21 @@
     margin: 0px;
     background-color: white;
     border: 1px solid black;
-    width: max-content;
+    border-radius: 4px;
     position: absolute;
     z-index: 1;
+
+    &.position-top {
+      border-bottom: 2px solid;
+    }
+    &.position-bottom {
+      border-top: 2px solid;
+    }
+    &.position-left {
+      border-right: 2px solid;
+    }
+    &.position-right {
+      border-left: 2px solid;
+    }
   }
 }

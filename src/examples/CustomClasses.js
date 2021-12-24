@@ -10,7 +10,8 @@ const CustomClasses = () => {
         Tooltip trigger container can be customised by passing classes to TipPop
         component!
         <br />
-        <strong>Note:</strong> container is the target for inbuilt behaviors!
+        <strong>Note:</strong> Container is the target for inbuilt behaviors but
+        padding also affects tooltip position!
       </p>
 
       <div className="d-flex">
