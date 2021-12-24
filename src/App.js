@@ -4,6 +4,7 @@ import InbuiltBehavior from "./examples/InbuiltBehavior";
 import CustomContent from "./examples/CustomContent";
 import CustomClasses from "./examples/CustomClasses";
 import CustomBehavior from "./examples/CustomBehavior";
+import TipPostion from "./examples/TipPosition";
 
 import gh from "./resources/gh.png";
 import npm from "./resources/npm.png";
@@ -15,6 +16,7 @@ const App = () => {
   const examples = [
     InbuiltBehavior,
     CustomContent,
+    TipPostion,
     CustomClasses,
     CustomBehavior,
   ];

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./TipPop.scss";
 
@@ -20,6 +20,8 @@ const TipPop = (props) => {
     className = "",
   } = props;
 
+  const tipContainerRef = useRef(null);
+
   const [showTip, setShowTip] = useState(show);
 
   const toggleShowTip = (e) => {
@@ -33,17 +35,58 @@ const TipPop = (props) => {
     onClick: behavior === "onClick" ? toggleShowTip : undefined,
   };
 
+  // Tooltip container position
+  const tcp = tipContainerRef.current
+    ? tipContainerRef.current.getBoundingClientRect()
+    : null;
+
+  // Constants for positioning of tooltip
+  const minTipHeight = 42;
+  const minTipBuffer = 12;
+  const tooltipMargin = 8;
+
+  // Decide tooltip position based on window size and container position
+  const tipPosition =
+    position === "auto" && tcp
+      ? window.innerHeight - (tcp.y + tcp.height) < minTipHeight + minTipBuffer
+        ? "top"
+        : "bottom"
+      : position;
+
+  const tipStyle = {
+    top:
+      tipPosition === "bottom" && tcp
+        ? tcp.height + tooltipMargin
+        : ["left", "right"].includes(tipPosition)
+        ? 0
+        : "",
+    bottom: tipPosition === "top" && tcp ? tcp.height + tooltipMargin : "",
+    right: tipPosition === "left" && tcp ? tcp.width + tooltipMargin : "",
+    left: tipPosition === "right" && tcp ? tcp.width + tooltipMargin : "",
+    width: "max-content",
+    maxWidth: tcp
+      ? tipPosition === "left"
+        ? tcp.left - 16 // Left
+        : tipPosition === "right"
+        ? window.innerWidth - tcp.right - 32 // Right
+        : window.innerWidth - tcp.left - 24 // Top and bottom
+      : "auto",
+    flex: 1,
+  };
+
   return (
     <div
+      ref={tipContainerRef}
       className={`tippop-container ${className.toString()}`}
       {...tipPopContainerEventProps}
     >
       {props.children}
       {(behavior === "custom" ? show : showTip) && (
         <div
-          className={`tippop position-${position} ${
+          className={`tippop position-${tipPosition} ${
             disablePointer ? "no-pointer" : ""
           }`}
+          style={tipStyle}
         >
           {tip}
         </div>
