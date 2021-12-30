@@ -36,3 +36,11 @@ History of the project TipPop.
 - [Feature] - Add width control based on position for tooltip content wrapping
 - [Style] - Add basic styling for tooltips based on positions.
 - [Docfix] - Add example for usage of position prop - TipPosition.
+
+### [1.0.0]
+
+- [Feature] - Add autoPositionBuffer prop for customizing auto placement.
+- [Style] - Add styling for tooltip's pointer towards the trigger
+- [DocFix] - Add examples of disabling pointer and customizing tooltip styles
+- [BugFix] - Add handling of JSX/string check while rendering tooltip content
+  Resolves before psuedo element needing a non text DOM node to render itself

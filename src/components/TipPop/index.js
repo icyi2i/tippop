@@ -5,9 +5,11 @@ import "./TipPop.scss";
 /**
  * @param JSX tip - text or JSX to render in tooltip
  * @param bool show - flag to control toggling tooltip on custom behavior
- * @param bool disablePointer - flag to disable arrow towards the target
  * @param string behavior - toggle behavior (onHover/onClick/custom)
  * @param string position - tooltip position (auto/top/bottom/left/right)
+ * @param number (int) autoPositionBuffer - number of pixels to consider
+ * while positioning in auto position
+ * @param bool disablePointer - flag to disable arrow towards the target
  * @param string className - custom classes for trigger container
  */
 const TipPop = (props) => {
@@ -16,6 +18,7 @@ const TipPop = (props) => {
     show = false,
     behavior = "onHover",
     position = "auto",
+    autoPositionBuffer = 16,
     disablePointer = false,
     className = "",
   } = props;
@@ -42,13 +45,13 @@ const TipPop = (props) => {
 
   // Constants for positioning of tooltip
   const minTipHeight = 42;
-  const minTipBuffer = 12;
   const tooltipMargin = 8;
 
   // Decide tooltip position based on window size and container position
   const tipPosition =
     position === "auto" && tcp
-      ? window.innerHeight - (tcp.y + tcp.height) < minTipHeight + minTipBuffer
+      ? window.innerHeight - (tcp.y + tcp.height) <
+        minTipHeight + autoPositionBuffer
         ? "top"
         : "bottom"
       : position;
@@ -88,7 +91,7 @@ const TipPop = (props) => {
           }`}
           style={tipStyle}
         >
-          {tip}
+          {React.isValidElement(tip) ? tip : <span>{tip}</span>}
         </div>
       )}
     </div>
@@ -101,6 +104,7 @@ TipPop.propTypes = {
   behavior: PropTypes.oneOf(["onHover", "onClick", "custom"]),
   position: PropTypes.oneOf(["auto", "top", "bottom", "left", "right"]),
   disablePointer: PropTypes.bool,
+  autoPositionBuffer: PropTypes.number,
 };
 
 export default TipPop;

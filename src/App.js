@@ -5,6 +5,8 @@ import CustomContent from "./examples/CustomContent";
 import CustomClasses from "./examples/CustomClasses";
 import CustomBehavior from "./examples/CustomBehavior";
 import TipPostion from "./examples/TipPosition";
+import DisablePointer from "./examples/DisablePointer";
+import TipStyling from "./examples/TipStyling";
 
 import gh from "./resources/gh.png";
 import npm from "./resources/npm.png";
@@ -19,6 +21,8 @@ const App = () => {
     TipPostion,
     CustomClasses,
     CustomBehavior,
+    DisablePointer,
+    TipStyling,
   ];
 
   return (

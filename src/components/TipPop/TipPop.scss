@@ -12,17 +12,52 @@
     position: absolute;
     z-index: 1;
 
+    ::before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+    }
+
     &.position-top {
       border-bottom: 2px solid;
+      &:not(.no-pointer) ::before {
+        border-top: 8px solid black;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -10px;
+        left: 4px;
+      }
     }
     &.position-bottom {
       border-top: 2px solid;
+      &:not(.no-pointer) ::before {
+        border-bottom: 8px solid black;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -10px;
+        left: 4px;
+      }
     }
     &.position-left {
       border-right: 2px solid;
+      &:not(.no-pointer) ::before {
+        border-left: 8px solid black;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        top: 4px;
+        right: -10px;
+      }
     }
     &.position-right {
       border-left: 2px solid;
+      &:not(.no-pointer) ::before {
+        border-right: 8px solid black;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        top: 4px;
+        left: -10px;
+      }
     }
   }
 }

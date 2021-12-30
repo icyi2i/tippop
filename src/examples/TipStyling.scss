@@ -1,0 +1,27 @@
+$tip-colors: (
+  success: (
+    dark: #008332,
+    light: #e4fff3,
+  ),
+  danger: (
+    dark: #c00000,
+    light: #ffe5e5,
+  ),
+);
+$positions: ("top", "bottom", "left", "right");
+
+@each $theme, $colors in $tip-colors {
+  .tippop-container.tip-#{$theme} {
+    .tippop {
+      border: 2px solid map-get($colors, "dark");
+      background-color: map-get($colors, "light");
+      color: map-get($colors, "dark");
+
+      @each $pos in $positions {
+        &.position-#{$pos}:not(.no-pointer) ::before {
+          border-#{$pos}-color: map-get($colors, "dark");
+        }
+      }
+    }
+  }
+}
