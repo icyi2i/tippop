@@ -1,6 +1,6 @@
 {
   "name": "tippop",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A minimal react tooltip component!",
   "main": "index.js",
   "scripts": {

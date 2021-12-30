@@ -60,9 +60,13 @@ Customization is possible in the following areas:
   - right
   - top
   - bottom
-  - auto - switches between bottom and top based on space available
+  - auto - switches between bottom and top based on space available. The
+    `autoPositionBuffer` prop allows you to define the height at which position
+    is switched in auto mode.
 - Styling: Custom classes allow you to customize how trigger container looks
-  like.
+  like. Theming is also possible for tooltips, see example
+  (src/examples/TipStyling.js) in repo.
+- You can also disable the pointer using the `disablePointer` flag.
 
 Check out the examples directory for customization usage!
 
